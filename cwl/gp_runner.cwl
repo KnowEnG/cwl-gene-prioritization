@@ -64,21 +64,21 @@ arguments:
         echo "rwr_max_iterations: 100" >> run_params.yml; \
         echo "rwr_restart_probability: 0.5" >> run_params.yml; \
       fi && \
-      if [ "$(inputs.num_bootstraps)" -ne 0 ]; then \
+      if [ $(inputs.num_bootstraps) -ne 0 ]; then \
         echo "number_of_bootstraps: $(inputs.num_bootstraps)" >> run_params.yml; \
         echo "cols_sampling_fraction: 0.8" >> run_params.yml; \
         echo "rows_sampling_fraction: 1.0" >> run_params.yml; \
       fi && \
-      if [ "$(inputs.use_network)" = "true" ] && [ "$(inputs.num_bootstraps)" -ne 0 ]; then \
+      if [ "$(inputs.use_network)" = "true" ] && [ $(inputs.num_bootstraps) -ne 0 ]; then \
         echo "method: bootstrap_net_correlation" >> run_params.yml; \
-      elif [ "$(inputs.use_network)" = "true" ] && [ "$(inputs.num_bootstraps)" -eq 0 ]; then \
+      elif [ "$(inputs.use_network)" = "true" ] && [ $(inputs.num_bootstraps) -eq 0 ]; then \
         echo "method: net_correlation" >> run_params.yml; \
-      elif [ "$(inputs.use_network)" = "false" ] && [ "$(inputs.num_bootstraps)" -ne 0 ]; then \
+      elif [ "$(inputs.use_network)" = "false" ] && [ $(inputs.num_bootstraps) -ne 0 ]; then \
         echo "method: bootstrap_correlation" >> run_params.yml; \
-      elif [ "$(inputs.use_network)" = "false" ] && [ "$(inputs.num_bootstraps)" -eq 0 ]; then \
+      elif [ "$(inputs.use_network)" = "false" ] && [ $(inputs.num_bootstraps) -eq 0 ]; then \
         echo "method: correlation" >> run_params.yml; \
       fi && \
-      date && python3 /home/src/gene_prioritization.py -run_directory ./ -run_file run_params.yml && cat ./*_viz.tsv > combo_results.txt && date
+      date && python3 /home/src/gene_prioritization.py -run_directory ./ -run_file run_params.yml && cat *_viz.tsv > combo_results.txt && mv ranked_genes*.tsv ranked_genes_download.tsv && mv top_genes*.tsv top_genes_download.tsv && date
 
 outputs:
   - id: top100_genes_matrix

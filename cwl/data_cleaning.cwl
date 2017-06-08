@@ -121,4 +121,3 @@ outputs:
     type: ["null", File]
     outputBinding:
       glob: "run_cleanup.yml"
-# phenotype output
