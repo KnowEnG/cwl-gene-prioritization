@@ -1,0 +1,15 @@
+sums_file:
+  class: File
+  location: sums
+ranked_genes_file:
+  class: File
+  location: ../results/ranked_genes_download.tsv
+top_genes_file:
+  class: File
+  location: ../results/top_genes_download.tsv
+combo_results_file:
+  class: File
+  location: ../results/combo_results.txt
+edge_file:
+  class: File
+  location: ../results/9606.STRING_experimental.edge
