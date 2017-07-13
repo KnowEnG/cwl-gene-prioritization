@@ -1,0 +1,12 @@
+genomic_spreadsheet_file:
+  class: File
+  location: ../data/Hsap.ccle.G.gene_mut.binary.df
+phenotypic_spreadsheet_file:
+  class: File
+  location: ../data/Hsap.ccle.P.cyto_ic50.pos.df
+correlation_measure: pearson
+num_bootstraps: 8
+use_network: true
+edge_type: STRING_experimental
+network_type: Gene
+taxonid: '9606'
