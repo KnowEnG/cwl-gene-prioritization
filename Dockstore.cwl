@@ -47,7 +47,7 @@ inputs:
 
 steps:
   - id: kn_fetcher
-    run: workflow-cwl/kn_fetcher.cwl
+    run: kn_fetcher.cwl
     in:
       - { id: get_network, source: "#use_network" }
       - { id: network_type, source: "#network_type" }
@@ -60,7 +60,7 @@ steps:
       - { id: network_metadata_file }
 
   - id: data_cleaning
-    run: workflow-cwl/data_cleaning.cwl
+    run: data_cleaning.cwl
     in:
       - { id: pipeline_type, valueFrom: "gene_prioritization_pipeline" }
       - { id: genomic_spreadsheet_file, source: "#genomic_spreadsheet_file" }
@@ -76,7 +76,7 @@ steps:
       - { id: clean_phenotypic_file }
 
   - id: gp_runner
-    run: workflow-cwl/gp_runner.cwl
+    run: gp_runner.cwl
     in:
       - { id: use_network, source: "#use_network" }
       - { id: genomic_file, source: "#data_cleaning/clean_genomic_file" }
