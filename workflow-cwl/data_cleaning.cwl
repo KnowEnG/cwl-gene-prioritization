@@ -10,7 +10,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: knowengdev/data_cleanup_pipeline:06_05_2017
+    dockerPull: knowengdev/data_cleanup_pipeline:07_14_2017
   - class: ResourceRequirement
     coresMin: 1
     ramMin: 5000 #MB
@@ -51,7 +51,7 @@ inputs:
     label: RedisDB Port
     doc: port for Redis db
     type: ["null", int]
-    default: 6379
+    default: 6381
   - id: redis_pass
     label: RedisDB AuthStr
     doc: password for Redis db
