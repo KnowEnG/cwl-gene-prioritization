@@ -10,7 +10,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: knowengdev/data_cleanup_pipeline:07_14_2017
+    dockerPull: knowengdev/data_cleanup_pipeline:07_11_2017
   - class: ResourceRequirement
     coresMin: 1
     ramMin: 5000 #MB
