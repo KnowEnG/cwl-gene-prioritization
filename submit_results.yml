@@ -1,0 +1,15 @@
+config_file:
+  class: File
+  location: .synapseConfig
+team_name:
+eval_id:
+file:
+  - class: File
+    location: ./ranked_genes_download.tsv
+  - class: File
+    location: ./top_genes_download.tsv
+  - class: File
+    location: ./combo_results.txt
+  - class: File
+    location: ./9606.STRING_experimental.edge
+parent_id:
