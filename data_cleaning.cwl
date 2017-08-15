@@ -10,7 +10,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: knowengdev/data_cleanup_pipeline:07_11_2017
+    dockerPull: knowengdev/data_cleanup_pipeline:07_26_2017
   - class: ResourceRequirement
     coresMin: 1
     ramMin: 5000 #MB
@@ -46,12 +46,12 @@ inputs:
     label: RedisDB host URL
     doc: url of Redis db
     type: ["null", string]
-    default: knowdev.knowhub.org
+    default: knowredis.knoweng.org
   - id: redis_port
     label: RedisDB Port
     doc: port for Redis db
     type: ["null", int]
-    default: 6381
+    default: 6379
   - id: redis_pass
     label: RedisDB AuthStr
     doc: password for Redis db

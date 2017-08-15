@@ -26,7 +26,7 @@ inputs:
     label: AWS S3 Bucket Name
     doc: the aws s3 bucket
     type: string
-    default: KnowNets/KN-6rep-1611/userKN-6rep-1611
+    default: KnowNets/KN-20rep-1706/userKN-20rep-1706
   - id: network_type
     label: Subnetwork Class
     doc: the type of subnetwork

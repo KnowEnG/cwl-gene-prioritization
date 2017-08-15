@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: knowengdev/gene_prioritization_pipeline:04_26_2017
+    dockerPull: knowengdev/gene_prioritization_pipeline:07_26_2017
   - class: ResourceRequirement
     coresMin: 1
     ramMin: 5000 #MB
