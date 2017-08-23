@@ -44,6 +44,21 @@ inputs:
     doc: taxon id of species related to genomic spreadsheet
     type: ["null", string]
     default: '9606'
+  - id: redis_host
+    label: RedisDB host URL
+    doc: url of Redis db
+    type: ["null", string]
+    default: knowredis.knoweng.org
+  - id: redis_port
+    label: RedisDB Port
+    doc: port for Redis db
+    type: ["null", int]
+    default: 6379
+  - id: redis_pass
+    label: RedisDB AuthStr
+    doc: password for Redis db
+    type: ["null", string]
+    default: KnowEnG
 
 steps:
   - id: kn_fetcher
@@ -67,6 +82,9 @@ steps:
       - { id: taxonid, source: "#taxonid" }
       - { id: phenotypic_spreadsheet_file, source: "#phenotypic_spreadsheet_file" }
       - { id: gene_prioritization_corr_measure, source: "#correlation_measure" }
+      - { id: redis_host, source: "#redis_host" }
+      - { id: redis_port, source: "#redis_port" }
+      - { id: redis_pass, source: "#redis_pass" }
     out:
       - { id: cleaning_log_file }
       - { id: gene_map_file }

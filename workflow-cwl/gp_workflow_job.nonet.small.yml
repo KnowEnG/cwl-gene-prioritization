@@ -7,3 +7,5 @@ phenotypic_spreadsheet_file:
 correlation_measure: pearson
 num_bootstraps: 8
 use_network: false
+redis_host: knowredis.knoweng.org
+redis_port: 6379

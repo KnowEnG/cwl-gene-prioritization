@@ -10,3 +10,5 @@ use_network: true
 edge_type: STRING_experimental
 network_type: Gene
 taxonid: '9606'
+redis_host: knowredis.knoweng.org
+redis_port: 6379
