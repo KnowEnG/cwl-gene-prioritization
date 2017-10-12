@@ -61,7 +61,7 @@ inputs:
     label: ID Source Hint
     doc: suggestion for ID source database used to resolve ambiguities in mapping
     type: ["null", string]
-    default: \'\'
+    default: ''
 
 baseCommand: []
 arguments:
@@ -70,12 +70,12 @@ arguments:
       echo "
       pipeline_type: $(inputs.pipeline_type)
       spreadsheet_name_full_path: $(inputs.genomic_spreadsheet_file.path)
-      taxonid: \'$(inputs.taxonid)\'
+      taxonid: '$(inputs.taxonid)'
       redis_credential:
         host: $(inputs.redis_host)
         password: $(inputs.redis_pass)
         port: $(inputs.redis_port)
-      source_hint: $(inputs.source_hint)
+      source_hint: '$(inputs.source_hint)'
       results_directory: ./
       " > run_cleanup.yml && \
       if [ "$(inputs.phenotypic_spreadsheet_file.nameroot)" != "sh" ]; then \
