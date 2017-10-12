@@ -47,7 +47,7 @@ baseCommand: []
 arguments:
   - shellQuote: false
     valueFrom: |-
-      MYCMD="date && if [ \\"$(inputs.get_network)\\" = \\"true\\" ]; then /home/kn_fetcher.sh $(inputs.bucket) $(inputs.network_type) $(inputs.taxonid) $(inputs.edge_type); else touch empty.edge; fi && date" && echo $MYCMD > run_fetch.cmd && eval $MYCMD
+      MYCMD="date && if [ \"$(inputs.get_network)\" = \"true\" ]; then /home/kn_fetcher.sh $(inputs.bucket) $(inputs.network_type) $(inputs.taxonid) $(inputs.edge_type); else touch empty.edge; fi && date" && echo $MYCMD > run_fetch.cmd && eval $MYCMD
 
 outputs:
   - id: network_edge_file
